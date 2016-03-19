@@ -43,5 +43,5 @@ function createName(){
     }else{
         document.getElementById('CharName').value = "Tylda";
     }
-    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"localStorage.setItem(\'BBName\', document.getElementById('CharName').value); ch1init();\">Zatwierdź</a>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"localStorage.setItem(\'BBName\', encodeURI(document.getElementById('CharName').value)); ch1init();\">Zatwierdź</a>";
 }

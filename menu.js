@@ -7,9 +7,13 @@ function menu() {
 }
 
 function  beforeBegin() {
-    if (confirm('Kontynuacja usunie Twój poprzedni zapis.')) {
-        createCharacter();
-    } else {
+    if (localStorage.getItem("BBLoc")!=null) {
+        if (confirm('Kontynuacja usunie Twój poprzedni zapis.')) {
+            createCharacter();
+        } else {
+        }
+    }else{
+            createCharacter();
     }
 }
 

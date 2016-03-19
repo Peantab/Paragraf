@@ -1,8 +1,10 @@
-function ifFemale(){
+//"BBBeastCode" "True"
+function ifFemale(replace){
     if (localStorage.getItem("BBGen")=="female"){
+        if (typeof(replace)==='undefined') replace="a";
         var amount = document.getElementsByClassName('genDep').length;
         for (var i=0;i<amount;i=i+1) {
-            document.getElementsByClassName('genDep')[i].innerHTML = "a";
+            document.getElementsByClassName('genDep')[i].innerHTML = replace;
         }
     }
 }
@@ -23,7 +25,7 @@ function ch1init() { //BBLoc ch1init
 function p1_1(){
     localStorage.setItem("BBLoc","p1_1");
     document.getElementById('header').innerHTML = defaultHeader;
-    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na dworze szaleje zamieć. Widzisz na odległość może 10 metrów. Pomimo gęsto padającego śniegu dostrzegasz na ziemi dwa rodzaje (nie swoich śladów): te, które występują jedynie dalej od karczmy, są drobne, na skraju widoczności.</p>";
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na dworze szaleje zamieć. Widzisz na odległość może 10 metrów. Pomimo gęsto padającego śniegu dostrzegasz na ziemi dwa rodzaje (nie swoich) śladów: te, które występują jedynie dalej od karczmy, są drobne, na skraju widoczności.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_1a()\">Udaj się za silnie typowymi śladami</a>" +
         "<a class=\"option\" onClick=\"p1_2()\">Udaj się za drobnymi śladami</a>";
     if (localStorage.getItem("BBClass")=="thief"){
@@ -111,25 +113,22 @@ function p1_3(){
 
 function p1_3a(){
     localStorage.setItem("BBLoc","p1_3a");
-    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Twój przeciwnik nie ma z tobą żadnych szans. W epicki sposób pokonujesz bestię, z pewnością będą o tym krążyć legendy.<br>Zebrał się spory tłum gapiów, podziwiających twoje zwycięstwo</br></p>";
-    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3()\">Porozmawaiaj z przestraszonym pakietem.</a>";
-    document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3()\">Pozwalaj się adorować przez tłum.[+1 do sławy :P]</a>";
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Twój przeciwnik nie ma z tobą żadnych szans. W epicki sposób pokonujesz bestię, z pewnością będą o tym krążyć legendy.</p><p>Zebrał się spory tłum gapiów, podziwiających twoje zwycięstwo</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_4()\">Porozmawaiaj z przestraszonym pakietem.</a>";
+    document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3dc()\">Pozwalaj się adorować przez tłum.[+1 do sławy]</a>";
 }
 
 function p1_3b(){
     localStorage.setItem("BBLoc","p1_3b");
-    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">No i na tym kończy się twoja przygoda. Niestety nie udało ci się wykonać zlecenia. Zwyciężył w tobie strach albo zdrowy rozsądek.</p>";
-    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch1init()\">Koniec</a>";
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">No i na tym kończy się twoja przygoda. Nie warto robić o tobie gry. Niestety, nie udało ci się wykonać zadania. Zwyciężył w tobie strach albo zdrowy rozsądek.</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"menu()\">Koniec</a>";
 }
 
 function p1_3c(){
     localStorage.setItem("BBLoc","p1_3c");
-    if (localStorage.getItem("BBGen")=="male") {
-        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Napisałeś idealny kod, szkoda tylko, że zajeło ci to tak długo i bestia zdążyła zjeść pakiet. No, ale twój kod jest najlepszy, a przeciż to jest najważniejsze. Odchodzisz zadowolony z siebie. Kto by się przejmował jakimś tam pakietem. </p>";
-    }else{
-        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Napisałaś idealny kod, szkoda tylko, że zajeło ci to tak długo i bestia zdążyła zjeść pakiet. No, ale twój kod jest najlepszy, a przeciż to jest najważniejsze. Odchodzisz zadowolona z siebie. Kto by się przejmował jakimś tam pakietem. </p>";
-    }
-        document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch1init()\">Koniec</a>";
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Tym razem postawił<span class=\"genDep\">e</span>ś na minimalizm. Decydujesz się na drobną kulę ognistą. Dosięga ona bestii tuż przed tym, jak miała ona wbić swoje kły w pakiet. Zdążył<span class=\"genDep\">e</span>ś. Warto było skorzystać z gotowej biblioteki.</p>";
+    ifFemale();
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_4()\">Porozmawaiaj z przestraszonym pakietem.</a>";
 }
 
 function p1_3d(){
@@ -139,5 +138,33 @@ function p1_3d(){
     }else{
         document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Nikt nie spodziewał się takiego obrotu sprawy. Tak, stałaś się bestią. I co dalej?</p>";
     }
-    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch1init()\">Koniec</a>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3da()\">Walcz z bestią (tą drugą!).</a>" +
+        "<a class=\"option\" onClick=\"p1_3db()\">Złap pakiet zębami i przenieś w bezpieczne miejsce.</a>";
+}
+
+function p1_3da() {
+    localStorage.setItem("BBLoc","p1_3da");
+    localStorage.setItem("BBBeastCode","True");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Jesteś bestią. Czujesz się bestią. I czujesz krew. Smakujesz jej...</p><p>Ogromnego wysiłku woli wymaga od ciebie przywrócenie twojego repozytorium do stanu przed mergem z repo bestii.</p><p>Gdy odzyskujesz przytomność, bestia jest martwa, a pakiet patrzy na ciebie z przestrachem z oddali. Kod potwora zachowujesz w osobnym folderze.</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_4()\">Porozmawaiaj z przestraszonym pakietem.</a>";
+}
+
+function p1_3db() {
+    localStorage.setItem("BBLoc","p1_3db");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Oczyma bestii oceniasz sytuację. Jesteś nieznacznie bliżej pakietu niż twój przeciwnik. Ruszasz do biegu. O włos udaje ci się wyprzedzić wrogie monstrum, złapać pakiet zębami, wykonać ostry zwrot i pognać do karczmy.</p><img class=\"krecha\" src=\"przerywnik.png\" /><p>Po dotarciu do karczmy i powrocie do ludzkiej formy zauważasz, że pakiet nie przeżył tej podróży – sytuacja doprowadziła go do zawału.</p>" +
+        "<p>Zrobił<span class=\"genDep\">e</span>ś, co mogł<span class=\"genDep\">e</span>ś, ale nie jesteś zadowolon<span class=\"genDep\">y</span> obrotem spraw, podejrzewasz, że można było zrobić coś inaczej...</p><p>Wrócił<span class=\"genDep\">e</span>ś niejako do punktu wyjścia: dzień był jeszcze bardziej męczący, a ty tym bardziej potrzebujsz odpoczynku w karczmie.</p>";
+    ifFemale();
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"menu()\">Koniec</a>";
+}
+
+function p1_3dc() {
+    localStorage.setItem("BBLoc", "p1_3dc");
+    var chName = localStorage.getItem("BBName");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">" + chName + "! " + chName + "! " + chName + "! – tłum skanduje twoje imie. Czujesz się niezwykle docenion<span class=\"genDep\">y</span>, jak jeszcze nigdy w życiu. Ma to efekt w postaci zwiększenia twojej pewności siebie.</p><p>Nikt w tłumie – który w sumie nie bardzo wiadomo, skąd się wziął – nie zwraca uwagi na pakiet, ale ty, o wielk<span class=\"genDep\">i</span>, pamiętasz wciąż, po co tu jesteś</p>";
+    ifFemale();
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_4()\">Porozmawaiaj ze skrytym w cieniu pakietem.</a>";
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function p1_4() {
+    document.getElementById('options').innerHTML = "Work in Progress";
 }
