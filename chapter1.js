@@ -83,7 +83,7 @@ function p1_1d() {
 
 function p1_2() {
     localStorage.setItem("BBLoc","p1_2");
-    document.getElementById('pic').innerHTML = "<img src=\"imag03.png\" />";
+    document.getElementById('pic').innerHTML = "<img src=\"imag05.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Po pięciu minutach drogi, przerywanej co chwilę poszukiwaniem tropu, drobna sylwetka zaczyna majaczyć na horyzoncie. W miarę, jak się zbliżasz dostrzegasz więcej szczegółów i widzisz, że pakiet goni przerażająca bestia. Musisz szybko coś zrobić.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3()\">Zacznij krzyczeć na bestię.</a>";
 
@@ -106,6 +106,7 @@ function p1_2() {
 
 function p1_3(){
     localStorage.setItem("BBLoc","p1_3");
+    document.getElementById('pic').innerHTML = "<img src=\"imag05.png\" />";
     if (localStorage.getItem("BBGen")=="male") {
         document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Chyba naprawdę nie myślałeś, że to cokolwiek da? Bestia popatrzyła na ciebie z politowaniem, odwróciła się i pobiegła dalej za pakietem.</p>";
     }else{
@@ -128,6 +129,7 @@ function p1_3(){
 
 function p1_3a(){
     localStorage.setItem("BBLoc","p1_3a");
+    document.getElementById('pic').innerHTML = "<img src=\"imag05.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Twój przeciwnik nie ma z tobą żadnych szans. W epicki sposób pokonujesz bestię, z pewnością będą o tym krążyć legendy.</p><p>Zebrał się spory tłum gapiów, podziwiających twoje zwycięstwo</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_4()\">Porozmawaiaj z przestraszonym pakietem.</a>";
     document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3dc()\">Pozwalaj się adorować przez tłum.[+1 do sławy]</a>";
@@ -142,6 +144,7 @@ function p1_3b(){
 
 function p1_3c(){
     localStorage.setItem("BBLoc","p1_3c");
+    document.getElementById('pic').innerHTML = "<img src=\"imag05.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Tym razem postawił<span class=\"genDep\">e</span>ś na minimalizm. Decydujesz się na drobną kulę ognistą. Dosięga ona bestii tuż przed tym, jak miała ona wbić swoje kły w pakiet. Zdążył<span class=\"genDep\">e</span>ś. Warto było skorzystać z gotowej biblioteki.</p>";
     ifFemale();
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_4()\">Porozmawaiaj z przestraszonym pakietem.</a>";
@@ -149,6 +152,7 @@ function p1_3c(){
 
 function p1_3d(){
     localStorage.setItem("BBLoc","p1_3d");
+    document.getElementById('pic').innerHTML = "<img src=\"imag05.png\" />";
     if (localStorage.getItem("BBGen")=="male") {
         document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Nikt nie spodziewał się takiego obrotu sprawy. Tak, stałeś się bestią. I co dalej?</p>";
     }else{
@@ -161,12 +165,14 @@ function p1_3d(){
 function p1_3da() {
     localStorage.setItem("BBLoc","p1_3da");
     localStorage.setItem("BBBeastCode","True");
+    document.getElementById('pic').innerHTML = "<img src=\"imag05.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Jesteś bestią. Czujesz się bestią. I czujesz krew. Smakujesz jej...</p><p>Ogromnego wysiłku woli wymaga od ciebie przywrócenie twojego repozytorium do stanu przed mergem z repo bestii.</p><p>Gdy odzyskujesz przytomność, bestia jest martwa, a pakiet patrzy na ciebie z przestrachem z oddali. Kod potwora zachowujesz w osobnym folderze.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_4()\">Porozmawaiaj z przestraszonym pakietem.</a>";
 }
 
 function p1_3db() {
     localStorage.setItem("BBLoc","p1_3db");
+    document.getElementById('pic').innerHTML = "<img src=\"imag05.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Oczyma bestii oceniasz sytuację. Jesteś nieznacznie bliżej pakietu niż twój przeciwnik. Ruszasz do biegu. O włos udaje ci się wyprzedzić wrogie monstrum, złapać pakiet zębami, wykonać ostry zwrot i pognać do karczmy.</p><img class=\"krecha\" src=\"przerywnik.png\" /><p>Po dotarciu do karczmy i powrocie do ludzkiej formy zauważasz, że pakiet nie przeżył tej podróży – sytuacja doprowadziła go do zawału.</p>" +
         "<p>Zrobił<span class=\"genDep\">e</span>ś, co mogł<span class=\"genDep\">e</span>ś, ale nie jesteś zadowolon<span class=\"genDep\">y</span> obrotem spraw, podejrzewasz, że można było zrobić coś inaczej...</p><p>Wrócił<span class=\"genDep\">e</span>ś niejako do punktu wyjścia: dzień był jeszcze bardziej męczący, a ty tym bardziej potrzebujsz odpoczynku w karczmie.</p>";
     ifFemale();
@@ -176,6 +182,7 @@ function p1_3db() {
 function p1_3dc() {
     localStorage.setItem("BBLoc", "p1_3dc");
     localStorage.setItem("BBConfidence","True");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     var chName = localStorage.getItem("BBName");
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">" + chName + "! " + chName + "! " + chName + "! – tłum skanduje twoje imie. Czujesz się niezwykle docenion<span class=\"genDep\">y</span>, jak jeszcze nigdy w życiu. Ma to efekt w postaci zwiększenia twojej pewności siebie.</p><p>Nikt w tłumie – który w sumie nie bardzo wiadomo, skąd się wziął – nie zwraca uwagi na pakiet, ale ty, o wielk<span class=\"genDep\">i</span>, pamiętasz wciąż, po co tu jesteś</p>";
     ifFemale();
@@ -184,6 +191,7 @@ function p1_3dc() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function p1_4() {
     localStorage.setItem("BBLoc", "p1_4");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Podchodzisz do skulonego ze strachu pakietu. Wygląda, jakby przebył właśnie długą drogę, znacznie dłuższą niż te, do której został powołany. Zastanawiasz się, jak zacząć rozmowę...</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">– Yyy... Co ty tu robisz?</a>" +
         "<a class=\"option\" onClick=\"p1_4a()\">– Hej, stary! Sto lat cię nie widział<span class=\"genDep\">e</span>m, co tu porabiasz?!</a>";
@@ -201,12 +209,14 @@ function p1_4() {
 
 function p1_4a() {
     localStorage.setItem("BBLoc", "p1_4a");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Pakiet patrzy na ciebie jak na czubka. Na moment z jego oblicza znika strach. Decyduje się przemówić</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">Czekaj.</a>";
 }
 
 function p1_4b() {
     localStorage.setItem("BBLoc", "p1_4b");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     localStorage.setItem("BB10Coins","True");
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na brzmienie słów „sztuki miedzi”, pakiet natychmiast odzyskuje przytomność umysłu. Niechętnie wręcza ci monety.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">Czekaj.</a>";
@@ -215,6 +225,7 @@ function p1_4b() {
 function p1_4c() {
     localStorage.setItem("BBLoc", "p1_4c");
     localStorage.setItem("BBTCPIdent", "True");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\"><pre style=\"text-align: left;\">struct Pakiet{</pre><br /><pre>    string name=\"TeCeP\";</pre><br /><pre>    string state=\"frightened\";</pre><br /><pre>};</pre></p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">– Witaj, TeCeP. Co sprawiło, że zapuściłeś się w tak daleko?</a>" +
         "<a class=\"option\" onClick=\"p1_5()\">– Yyy... Co ty tu robisz?</a>" +
@@ -223,6 +234,7 @@ function p1_4c() {
 
 function p1_4d(){
     localStorage.setItem("BBLoc", "p1_4d");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">TeCeP, skonfundowany, patrzy na ciebie, jakby próbował sobie coś przypomnieć</p><p>– My się znamy? Nie kojarzę <span class=\"genDep\">pana</span>... Ale jak już pytasz...</p>";
     ifFemale("pani");
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">Słuchaj dalej.</a>";
@@ -230,6 +242,7 @@ function p1_4d(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function p1_5(){
     localStorage.setItem("BBLoc", "p1_5");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     var message = "<p class=\"firstParagraph\">Pakiet zaczyna niechętnie:</p><p>– Próbowałem dostać się do Warstwy Transportowej. Wyruszyłem dobrze z tydzień temu. Pięć dni temu rozpętała się zamieć. Musiałem wówczas zgubić drogę... Gdzie właściwie jestem?";
     //document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Pakiet zaczyna niechętnie:</p><p>– Próbowałem dostać się do Warstwy Transportowej. Wyruszyłem dobrze z tydzień temu. Pięć dni temu rozpętała się zamieć. Musiałem wówczas zgubić drogę... Gdzie właściwie jestem?";
     if (localStorage.getItem("BBTCPIdent")!="True"){
@@ -248,6 +261,7 @@ function p1_5(){
 
 function p1_5a(){
     localStorage.setItem("BBLoc", "p1_5a");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p>– Niedobrze... Muszę pilnie dotrzeć na miejsce. Administrator Baldur wysłał komendy, które mają dotrzeć do wszystkich jednostek w LANie. (Lenno Administratorów *Nixowych)</p>"
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_6a()\">– Jeśli naprawdę muszę, mogę cię zaprowadzić.</a>";
     if (localStorage.getItem("BBClass")=="thief"){
@@ -264,6 +278,7 @@ function p1_5a(){
 
 function p1_6a() {
     localStorage.setItem("BBLoc", "p1_6a");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p>– Byłbym bardzo wdzięczny. Straciłem już wiarę, że jeszcze dotrę do celu.</p>" +
         "<p>Przygotowujecie zapasy i pakujecie się na co najmniej tygodniową drogę. Zamierzacie wyruszyć następnego dnia o świcie.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch2init()\">Zakończ segment pierwszy</a>"
@@ -271,6 +286,7 @@ function p1_6a() {
 
 function p1_6b() {
     localStorage.setItem("BBLoc", "p1_6b");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p>– Jestem skłonny zpłacić tą kwotę. Informacja jest cenniejsza niż krzem!</p>" +
         "<p>Pomysł podróży nieszczególnie ci się podoba, ale czego to się nie robi za garść krzemiaków. Stracisz może dwa tygodnie, ale zarobek jest godziwy.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch2init()\">Zakończ segment pierwszy</a>"
@@ -278,6 +294,7 @@ function p1_6b() {
 
 function p1_6c() {
     localStorage.setItem("BBLoc", "p1_6c");
+    document.getElementById('pic').innerHTML = "<img src=\"imag06.png\" />";
     document.getElementById('scene').innerHTML = "<p>– To wspaniale! Zawsze marzyłem, żeby spotkać <span class=\"genDep\">takiego bohatera</span>, jak ty!</p>" +
         "<p>Już nie możesz doczekać się początku podróży - czeka cię nowa, wspaniała przygoda!</p>";
     ifFemale("taką bohaterkę");
