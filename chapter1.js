@@ -63,9 +63,24 @@ function p1_1d() {
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_2()\">Triumfalnie podążaj za drobnymi śladami, udowodniwszy wyższość metod rozumowych nad prostackimi rozwiązaniami.</a>";
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function p1_2() {
     localStorage.setItem("BBLoc","p1_2");
-    document.getElementById('options').innerHTML = "Work in Progress";
-}
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Po pięciu minutach drogi, przerywanej co chwilę poszukiwaniem tropu, drobna sylwetka zaczyna majaczyć na horyzoncie. W miarę, jak się zbliżasz dostrzegasz więcej szczegółów i widzisz, że pakiet goni przerażająca bestia. Musisz szybko coś zrobić.</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_2()\">Zacznij krzyczeć na bestię.</a>";
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (localStorage.getItem("BBClass")=="warrior"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">[Wojownik]: Jesteś w swoim żywiole. Rzuć się w wir walki.</a>";
+    } else if(localStorage.getItem("BBClass")=="mage"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">[Mag]: Odejdź z godnością w zarośla i zacznij bohatersko kodzić.</a>";
+    } else{
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">[Złodziej]: Zaadaptuj kod źródłowy bestii.</a>";
+    }
+
+    if (localStorage.getItem("BBGen")=="female") {
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">Wiej. Nie chcesz być w końcu żadną bohaterką.</a>";
+    }else{
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">Wiej. Nie chcesz być w końcu żadnym bohaterem.</a>";
+    }
+}
