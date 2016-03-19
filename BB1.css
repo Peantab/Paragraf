@@ -1,0 +1,71 @@
+body{
+    background-color: #a76133;
+}
+
+div#main{
+    /*display: inline-block;*/
+    align-content: center;
+    margin: 2% 4%;
+    padding: 1%;
+    background-color: #f38e4a;
+}
+
+div#header{
+    text-align: center;
+    font-family: MathJax_Fraktur;
+    font-size: 5pc;
+    font-weight: bold;
+}
+
+div#scene{
+    text-align: center;
+}
+
+a{
+    cursor: pointer;
+}
+
+a.menu{
+    display: block;
+    font-size: 2pc;
+    font-family: Purisa;
+    font-style: oblique;
+}
+
+a.option{
+    /*display: list-item;*/
+    display: block;
+    font-size: 1.3em;
+    margin: 0.5em;
+
+}
+
+a.option:before{
+    content: ">";
+    padding-right: 0.4em;
+}
+
+div#pshr{
+    display: none;
+    background-color: #a76133;
+    margin: 0% 47%;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+img.krecha{
+    width: 70px;
+}
+
+p#credits{
+    font-size: 11px;
+    text-align: right;
+}
+
+div#description{
+    margin: 2% 4%;
+    padding: 0.5em;
+    height: 5em;
+    background-color: #462915;
+    color: white;
+}
