@@ -34,7 +34,7 @@ function ch1init() { //BBLoc ch1init
 function p1_1(){
     localStorage.setItem("BBLoc","p1_1");
     document.getElementById('pic').innerHTML = "<img src=\"imag02.png\" />";
-    document.getElementById('header').innerHTML = defaultHeader;
+    //document.getElementById('header').innerHTML = defaultHeader;//DEMO ONLY
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na dworze szaleje zamieć. Widzisz na odległość może 10 metrów. Pomimo gęsto padającego śniegu dostrzegasz na ziemi dwa rodzaje (nie swoich) śladów: te, które występują jedynie dalej od karczmy, są drobne, na skraju widoczności.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_1a()\">Udaj się za silnie typowymi śladami</a>" +
         "<a class=\"option\" onClick=\"p1_2()\">Udaj się za drobnymi śladami</a>";

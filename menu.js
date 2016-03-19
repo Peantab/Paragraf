@@ -22,6 +22,7 @@ function loadGame() {
     if (localStorage.getItem("BBLoc")==null){
         alert("Brak zapisanego stanu gry.");
     } else {
+        document.getElementById('header').innerHTML = "Segment 1";//DEMO ONLY!!!!!!!!!!!!!!!!!!!!!!
         window[localStorage.getItem("BBLoc")]();
     }
 }
