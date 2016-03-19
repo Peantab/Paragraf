@@ -24,7 +24,8 @@ div#header{
 }
 
 div#scene{
-    text-align: center;
+    /*text-align: center;*/
+    text-align: left;
 }
 
 a{
@@ -32,6 +33,7 @@ a{
 }
 
 a.menu{
+    text-align: center;
     display: block;
     font-size: 2pc;
     font-family: Purisa;
@@ -60,7 +62,11 @@ div#pshr{
 }
 
 img.krecha{
-    width: 70px;
+    display: block;
+
+    width: 8%;
+    position: relative;
+    left: 46%;
 }
 
 p#credits{
@@ -77,6 +83,10 @@ div#description{
     box-shadow:0 0 5px;
     color: black;
     /*color: white;*/
+}
+
+div#scene>h2{
+    text-align: center;
 }
 
 input[type="text"]{

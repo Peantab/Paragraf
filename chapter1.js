@@ -1,4 +1,8 @@
 //"BBBeastCode" "True"
+//"BBConfidence" "True"
+//"BB10Coins" "True"
+//"BBTCPIdent", "True"
+
 function ifFemale(replace){
     if (localStorage.getItem("BBGen")=="female"){
         if (typeof(replace)==='undefined') replace="a";
@@ -11,6 +15,10 @@ function ifFemale(replace){
 
 function ch1init() { //BBLoc ch1init
     localStorage.setItem("BBLoc","ch1init");
+    localStorage.setItem("BBBeastCode","False");
+    localStorage.setItem("BBConfidence","False");
+    localStorage.setItem("BB10Coins","False");
+    localStorage.setItem("BBTCPIdent", "False");
     document.getElementById('header').innerHTML = "Segment 1";
     document.getElementById('scene').innerHTML = "<h2 id=\"CCSub\">Wprowadzenie</h2><p class=\"firstParagraph\">Znajdujesz się w karczmie, gdzieś na bezludziu Mostka Południowego. Popijał<span class=\"genDep\">e</span>ś właśnie WINE i komentował<span class=\"genDep\">e</span>ś z karczmarzem warunki panujące w okolicy. Nagle drzwi otwierają się z hukiem.</p> " +
         "<p>– Straszna zawieja tam na zewnątrz! Jakiś pakiet z samego Sieciowego Podzespołu przywiało! – woła od progu przybysz, wyraźnie nie pochodzący z tych stron.</p>" +
@@ -92,9 +100,9 @@ function p1_2() {
 function p1_3(){
     localStorage.setItem("BBLoc","p1_3");
     if (localStorage.getItem("BBGen")=="male") {
-        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Chyba naprawdę nie myślałeś, że to cokolwiek da. Bestia popatrzyła na ciebie z politowaniem, odwróciła się i pobiegła dalej za pakietem.</p>";
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Chyba naprawdę nie myślałeś, że to cokolwiek da? Bestia popatrzyła na ciebie z politowaniem, odwróciła się i pobiegła dalej za pakietem.</p>";
     }else{
-        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Chyba naprawdę nie myślałaś, że to cokolwiek da. Bestia popatrzyła na ciebie z politowaniem, odwróciła się i pobiegła dalej za pakietem.</p>";
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Chyba naprawdę nie myślałaś, że to cokolwiek da? Bestia popatrzyła na ciebie z politowaniem, odwróciła się i pobiegła dalej za pakietem.</p>";
     }
     if (localStorage.getItem("BBClass")=="warrior"){
         document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3a()\">[Wojownik]: Jesteś w swoim żywiole. Rzuć się w wir walki.</a>";
@@ -159,6 +167,7 @@ function p1_3db() {
 
 function p1_3dc() {
     localStorage.setItem("BBLoc", "p1_3dc");
+    localStorage.setItem("BBConfidence","True");
     var chName = localStorage.getItem("BBName");
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">" + chName + "! " + chName + "! " + chName + "! – tłum skanduje twoje imie. Czujesz się niezwykle docenion<span class=\"genDep\">y</span>, jak jeszcze nigdy w życiu. Ma to efekt w postaci zwiększenia twojej pewności siebie.</p><p>Nikt w tłumie – który w sumie nie bardzo wiadomo, skąd się wziął – nie zwraca uwagi na pakiet, ale ty, o wielk<span class=\"genDep\">i</span>, pamiętasz wciąż, po co tu jesteś</p>";
     ifFemale();
@@ -166,5 +175,121 @@ function p1_3dc() {
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function p1_4() {
-    document.getElementById('options').innerHTML = "Work in Progress";
+    localStorage.setItem("BBLoc", "p1_4");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Podchodzisz do skulonego ze strachu pakietu. Wygląda, jakby przebył właśnie długą drogę, znacznie dłuższą niż te, do której został powołany. Zastanawiasz się, jak zacząć rozmowę...</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">– Yyy... Co ty tu robisz?</a>" +
+        "<a class=\"option\" onClick=\"p1_4a()\">– Hej, stary! Sto lat cię nie widział<span class=\"genDep\">e</span>m, co tu porabiasz?!</a>";
+    if (localStorage.getItem("BBClass")=="thief"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_4b()\">[Złodziej]: – Zostajesz obciążony kosztami akcji pozbywania się potwora, zgodnie z obowiązującym cennikiem wynoszącymi 10 sztuk krzemu.</a>";
+    }else if(localStorage.getItem("BBClass")=="mage"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_4c()\">[Mag]: – <pre>pakiet.getStatus();</pre></a>"
+    }
+    if (localStorage.getItem("BBConfidence")=="True"){
+        var chName = localStorage.getItem("BBName");
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_4a()\">[<i>Pewność siebie</i>]: – Ja, jedyn<span class=\"genDep\">y</span> i niepowtarzaln<span class=\"genDep\">y</span> " + chName + ", wybawił<span class=\"genDep\">e</span>m cię od niechybnej śmierci. Czemuż to przysłużyły się moje bohaterskie czyny?</a>";
+    }
+    ifFemale();
+}
+
+function p1_4a() {
+    localStorage.setItem("BBLoc", "p1_4a");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Pakiet patrzy na ciebie jak na czubka. Na moment z jego oblicza znika strach. Decyduje się przemówić</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">Czekaj.</a>";
+}
+
+function p1_4b() {
+    localStorage.setItem("BBLoc", "p1_4b");
+    localStorage.setItem("BB10Coins","True");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na brzmienie słów „sztuki miedzi”, pakiet natychmiast odzyskuje przytomność umysłu. Niechętnie wręcza ci monety.</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">Czekaj.</a>";
+}
+
+function p1_4c() {
+    localStorage.setItem("BBLoc", "p1_4c");
+    localStorage.setItem("BBTCPIdent", "True");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\"><pre style=\"text-align: left;\">struct Pakiet{</pre><br /><pre>    string name=\"TeCeP\";</pre><br /><pre>    string state=\"frightened\";</pre><br /><pre>};</pre></p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">– Witaj, TeCeP. Co sprawiło, że zapuściłeś się w tak daleko?</a>" +
+        "<a class=\"option\" onClick=\"p1_5()\">– Yyy... Co ty tu robisz?</a>" +
+        "<a class=\"option\" onClick=\"p1_4a()\">– Hej, stary! Sto lat cię nie widział<span class=\"genDep\">e</span>m, co tu porabiasz?!</a>";
+}
+
+function p1_4d(){
+    localStorage.setItem("BBLoc", "p1_4d");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">TeCeP, skonfundowany, patrzy na ciebie, jakby próbował sobie coś przypomnieć</p><p>– My się znamy? Nie kojarzę <span class=\"genDep\">pana</span>... Ale jak już pytasz...</p>";
+    ifFemale("pani");
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5()\">Słuchaj dalej.</a>";
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function p1_5(){
+    localStorage.setItem("BBLoc", "p1_5");
+    var message = "<p class=\"firstParagraph\">Pakiet zaczyna niechętnie:</p><p>– Próbowałem dostać się do Warstwy Transportowej. Wyruszyłem dobrze z tydzień temu. Pięć dni temu rozpętała się zamieć. Musiałem wówczas zgubić drogę... Gdzie właściwie jestem?";
+    //document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Pakiet zaczyna niechętnie:</p><p>– Próbowałem dostać się do Warstwy Transportowej. Wyruszyłem dobrze z tydzień temu. Pięć dni temu rozpętała się zamieć. Musiałem wówczas zgubić drogę... Gdzie właściwie jestem?";
+    if (localStorage.getItem("BBTCPIdent")!="True"){
+        //document.getElementById('scene').innerHTML
+        message += " Tak w ogóle – mów mi TeCeP.";
+    }
+    //document.getElementById('scene').innerHTML
+    message +="</p>";
+    document.getElementById('scene').innerHTML = message;
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_5a()\">– No więc, drogi TeCePie, znajdujesz się kompletnie nie tam, gdzie chciałbyś się znajdować, to jest stanowczo nie u swego celu. Natomiast zdecydowanie bliżej osad na południu macierzy.</a>" +
+        "<a class=\"option\" onClick=\"p1_5a()\">– W Południowym Mostku.</a>";
+    if (localStorage.getItem("BBClass")=="mage"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_5a()\">[Mag]: (po krótkim zastanowieniu) – Znajdujesz się w punkcie (-2.7182e8,-1.12358e13)px względem środka masy Warstwy Transportowej.</a>";
+    }
+}
+
+function p1_5a(){
+    localStorage.setItem("BBLoc", "p1_5a");
+    document.getElementById('scene').innerHTML = "<p>– Niedobrze... Muszę pilnie dotrzeć na miejsce. Administrator Baldur wysłał komendy, które mają dotrzeć do wszystkich jednostek w LANie. (Lenno Administratorów *Nixowych)</p>"
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_6a()\">– Jeśli naprawdę muszę, mogę cię zaprowadzić.</a>";
+    if (localStorage.getItem("BBClass")=="thief"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_6b()\">[Złodziej]: – Droga jest pełna niebezpieczeństw dla takich nieporadnych stworzonek jak ty, ale mogę cię odeskortować za niewielką opłatą 100 sztuk krzemu.</a>";
+    } else if (localStorage.getItem("BBClass")=="warrior"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_6c()\">[Wojownik]: – Droga jest pełna niebezpieczeństw dla nieuzbrojonych wędrowców, ale mogę cię odeskortować z dobroci serca.</a>";
+    }
+    
+    if (localStorage.getItem("BBBeastCode")=="True"){
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_6d()\">[<i>Kod potwora</i>]: – Mogę cię przemienić w bestię. Dotrzesz wtedy bezpiecznie, a u celu przemienisz się z powrotem w pakiet (...albo i nie).</a>";
+    }
+    document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_6e()\">– To naprawdę nie jest mój problem. Nie musisz dziękować za ratowanie życia. Wracam do karczmy.</a>";
+}
+
+function p1_6a() {
+    localStorage.setItem("BBLoc", "p1_6a");
+    document.getElementById('scene').innerHTML = "<p>– Byłbym bardzo wdzięczny. Straciłem już wiarę, że jeszcze dotrę do celu.</p>" +
+        "<p>Przygotowujecie zapasy i pakujecie się na co najmniej tygodniową drogę. Zamierzacie wyruszyć następnego dnia o świcie.</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch2init()\">Zakończ segment pierwszy</a>"
+}
+
+function p1_6b() {
+    localStorage.setItem("BBLoc", "p1_6b");
+    document.getElementById('scene').innerHTML = "<p>– Jestem skłonny zpłacić tą kwotę. Informacja jest cenniejsza niż krzem!</p>" +
+        "<p>Pomysł podróży nieszczególnie ci się podoba, ale czego to się nie robi za garść krzemiaków. Stracisz może dwa tygodnie, ale zarobek jest godziwy.</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch2init()\">Zakończ segment pierwszy</a>"
+}
+
+function p1_6c() {
+    localStorage.setItem("BBLoc", "p1_6c");
+    document.getElementById('scene').innerHTML = "<p>– To wspaniale! Zawsze marzyłem, żeby spotkać <span class=\"genDep\">takiego bohatera</span>, jak ty!</p>" +
+        "<p>Już nie możesz doczekać się początku podróży - czeka cię nowa, wspaniała przygoda!</p>";
+    ifFemale("taką bohaterkę");
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch2init()\">Zakończ segment pierwszy</a>"
+}
+
+function p1_6d() {
+    localStorage.setItem("BBLoc", "p1_6d");
+    document.getElementById('scene').innerHTML = "<p>– Czy to na pewno bezpieczne...? No dobrze, raz się żyje...</p>" +
+        "<p>Linkujesz kod potwora, po czym kompilujesz. Przemieniony TeCep biegnie na północ dużo szybciej, niż mógłby jako pakiet, nie obawiając się żadnych zagrożeń. To pewność siebię, czy też instynkt bestii zdominował już umysł gońca?</p><img class=\"krecha\" src=\"przerywnik.png\" />" +
+        "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawione w niej piwo.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę. Raczej dotrze, a jeśli dotrze, to na pewno na czas.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
+    ifFemale();
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"menu()\">Koniec</a>"
+}
+
+function p1_6e() {
+    localStorage.setItem("BBLoc", "p1_6e");
+    document.getElementById('scene').innerHTML = "<p>– Nic cię nie obchodzi los multiwersum! Nie to nie, nie będę cię zmuszać. – TeCeP wykrzykuje z wyrzutem, wyczuwasz też w jego głosie zawód. Ale co cię to obchodzi?</p>" +
+        "<p>Figurka posłańca, targana wiatrem, powoli znika na tle horyzontu. Prawdopodobnie jest to bardzo malowniczy, nastrojowy widok, ale nie masz czasu ani ochoty, by go obserwować.</p><img class=\"krecha\" src=\"przerywnik.png\" />" +
+        "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawione w niej piwo.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
+    ifFemale();
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"menu()\">Koniec</a>"
 }

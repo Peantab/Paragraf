@@ -9,3 +9,7 @@ p.firstParagraph:first-letter{
     border-width: 5px;
     border-color: black;
 }
+
+pre{
+    display: inline;
+}
