@@ -61,6 +61,16 @@ div#pshr{
     font-size: 10px;
 }
 
+/*img:not(.krecha){
+    display: block;
+    width: 20%;
+    height: 20%;
+    position: relative;
+    margin-left: 85%;
+    margin-top: -10%;
+    margin-bottom: 0%;
+}*/
+
 img.krecha{
     display: block;
 
@@ -87,6 +97,22 @@ div#description{
 
 div#scene>h2{
     text-align: center;
+}
+
+div#pic{
+    display: block;
+    position: fixed;
+    margin-left: 73%;
+    margin-top: -8%;
+    width: 15%;
+    /*height: 20%;*/
+    /*background-color: deeppink;*/
+
+}
+
+div#pic>img{
+    width: 100%;
+    height: 100%;
 }
 
 input[type="text"]{

@@ -14,6 +14,7 @@ function ifFemale(replace){
 }
 
 function ch1init() { //BBLoc ch1init
+    document.getElementById('pic').innerHTML = "<img src=\"imag01.png\" />";
     localStorage.setItem("BBLoc","ch1init");
     localStorage.setItem("BBBeastCode","False");
     localStorage.setItem("BBConfidence","False");
@@ -32,6 +33,7 @@ function ch1init() { //BBLoc ch1init
 
 function p1_1(){
     localStorage.setItem("BBLoc","p1_1");
+    document.getElementById('pic').innerHTML = "<img src=\"imag02.png\" />";
     document.getElementById('header').innerHTML = defaultHeader;
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na dworze szaleje zamieć. Widzisz na odległość może 10 metrów. Pomimo gęsto padającego śniegu dostrzegasz na ziemi dwa rodzaje (nie swoich) śladów: te, które występują jedynie dalej od karczmy, są drobne, na skraju widoczności.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_1a()\">Udaj się za silnie typowymi śladami</a>" +
@@ -49,6 +51,7 @@ function p1_1(){
 
 function p1_1a() {
     localStorage.setItem("BBLoc","p1_1a");
+    document.getElementById('pic').innerHTML = "<img src=\"imag02.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Podążasz za śladami, aż dostrzegasz tuż obok nich papierek po batoniku, jakich wiele wystawało z kieszeni przybysza, który dołożył ci roboty. Wściekł<span class=\"genDep\">y</span> na siebie za wybranie złego tropu, nie widzisz powodu, by iść dalej w tym kierunku.</p>";
     ifFemale();
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_1()\">Wróć pod karczmę</a>";
@@ -56,6 +59,7 @@ function p1_1a() {
 
 function p1_1b() {
     localStorage.setItem("BBLoc","p1_1b");
+    document.getElementById('pic').innerHTML = "<img src=\"imag02.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Szerokie ślady ewaluują się do ostatniego gościa karczmy.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_2()\">Udaj się za drobnymi śladami</a>";
 }
@@ -280,7 +284,7 @@ function p1_6d() {
     localStorage.setItem("BBLoc", "p1_6d");
     document.getElementById('scene').innerHTML = "<p>– Czy to na pewno bezpieczne...? No dobrze, raz się żyje...</p>" +
         "<p>Linkujesz kod potwora, po czym kompilujesz. Przemieniony TeCep biegnie na północ dużo szybciej, niż mógłby jako pakiet, nie obawiając się żadnych zagrożeń. To pewność siebię, czy też instynkt bestii zdominował już umysł gońca?</p><img class=\"krecha\" src=\"przerywnik.png\" />" +
-        "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawione w niej piwo.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę. Raczej dotrze, a jeśli dotrze, to na pewno na czas.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
+        "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawionego w niej grzańca.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę. Raczej dotrze, a jeśli dotrze, to na pewno na czas.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
     ifFemale();
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"menu()\">Koniec</a>"
 }
@@ -289,7 +293,7 @@ function p1_6e() {
     localStorage.setItem("BBLoc", "p1_6e");
     document.getElementById('scene').innerHTML = "<p>– Nic cię nie obchodzi los multiwersum! Nie to nie, nie będę cię zmuszać. – TeCeP wykrzykuje z wyrzutem, wyczuwasz też w jego głosie zawód. Ale co cię to obchodzi?</p>" +
         "<p>Figurka posłańca, targana wiatrem, powoli znika na tle horyzontu. Prawdopodobnie jest to bardzo malowniczy, nastrojowy widok, ale nie masz czasu ani ochoty, by go obserwować.</p><img class=\"krecha\" src=\"przerywnik.png\" />" +
-        "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawione w niej piwo.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
+        "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawionego w niej grzańca.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
     ifFemale();
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"menu()\">Koniec</a>"
 }
