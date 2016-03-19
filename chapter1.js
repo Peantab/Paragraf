@@ -23,7 +23,7 @@ function ch1init() { //BBLoc ch1init
 function p1_1(){
     localStorage.setItem("BBLoc","p1_1");
     document.getElementById('header').innerHTML = defaultHeader;
-    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na dworze szaleje zamieć. Widzisz na odległość może 10 metrów. Pomimo gęsto padającego śniegu dostrzegasz na ziemi dwa rodzaje nie swoich śladów: te, które występują jedynie dalej od karczmy, są drobne, na skraju widoczności.</p>";
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Na dworze szaleje zamieć. Widzisz na odległość może 10 metrów. Pomimo gęsto padającego śniegu dostrzegasz na ziemi dwa rodzaje (nie swoich śladów): te, które występują jedynie dalej od karczmy, są drobne, na skraju widoczności.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_1a()\">Udaj się za silnie typowymi śladami</a>" +
         "<a class=\"option\" onClick=\"p1_2()\">Udaj się za drobnymi śladami</a>";
     if (localStorage.getItem("BBClass")=="thief"){
@@ -68,19 +68,76 @@ function p1_1d() {
 function p1_2() {
     localStorage.setItem("BBLoc","p1_2");
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Po pięciu minutach drogi, przerywanej co chwilę poszukiwaniem tropu, drobna sylwetka zaczyna majaczyć na horyzoncie. W miarę, jak się zbliżasz dostrzegasz więcej szczegółów i widzisz, że pakiet goni przerażająca bestia. Musisz szybko coś zrobić.</p>";
-    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_2()\">Zacznij krzyczeć na bestię.</a>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3()\">Zacznij krzyczeć na bestię.</a>";
 
     if (localStorage.getItem("BBClass")=="warrior"){
-        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">[Wojownik]: Jesteś w swoim żywiole. Rzuć się w wir walki.</a>";
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3a()\">[Wojownik]: Jesteś w swoim żywiole. Rzuć się w wir walki.</a>";
     } else if(localStorage.getItem("BBClass")=="mage"){
-        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">[Mag]: Odejdź z godnością w zarośla i zacznij bohatersko kodzić.</a>";
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3c()\">[Mag]: Odejdź z godnością w zarośla i zacznij bohatersko kodzić.</a>";
     } else{
-        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">[Złodziej]: Zaadaptuj kod źródłowy bestii.</a>";
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3d()\">[Złodziej]: Zaadaptuj kod źródłowy bestii.</a>";
     }
 
     if (localStorage.getItem("BBGen")=="female") {
-        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">Wiej. Nie chcesz być w końcu żadną bohaterką.</a>";
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3b()\">Wiej. Nie chcesz być w końcu żadną bohaterką.</a>";
     }else{
-        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_2()\">Wiej. Nie chcesz być w końcu żadnym bohaterem.</a>";
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3b()\">Wiej. Nie chcesz być w końcu żadnym bohaterem.</a>";
     }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function p1_3(){
+    localStorage.setItem("BBLoc","p1_3");
+    if (localStorage.getItem("BBGen")=="male") {
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Chyba naprawdę nie myślałeś, że to cokolwiek da. Bestia popatrzyła na ciebie z politowaniem, odwróciła się i pobiegła dalej za pakietem.</p>";
+    }else{
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Chyba naprawdę nie myślałaś, że to cokolwiek da. Bestia popatrzyła na ciebie z politowaniem, odwróciła się i pobiegła dalej za pakietem.</p>";
+    }
+    if (localStorage.getItem("BBClass")=="warrior"){
+        document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3a()\">[Wojownik]: Jesteś w swoim żywiole. Rzuć się w wir walki.</a>";
+    } else if(localStorage.getItem("BBClass")=="mage"){
+        document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3c()\">[Mag]: Odejdź z godnością w zarośla i zacznij bohatersko kodzić.</a>";
+    } else{
+        document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3d()\">[Złodziej]: Zaadaptuj kod źródłowy bestii.</a>";
+    }
+
+    if (localStorage.getItem("BBGen")=="female") {
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3b()\">Wiej. Nie chcesz być w końcu żadną bohaterką.</a>";
+    }else{
+        document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3b()\">Wiej. Nie chcesz być w końcu żadnym bohaterem.</a>";
+    }
+}
+
+function p1_3a(){
+    localStorage.setItem("BBLoc","p1_3a");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Twój przeciwnik nie ma z tobą żadnych szans. W epicki sposób pokonujesz bestię, z pewnością będą o tym krążyć legendy.<br>Zebrał się spory tłum gapiów, podziwiających twoje zwycięstwo</br></p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3()\">Porozmawaiaj z przestraszonym pakietem.</a>";
+    document.getElementById('options').innerHTML += "<a class=\"option\" onClick=\"p1_3()\">Pozwalaj się adorować przez tłum.[+1 do sławy :P]</a>";
+}
+
+function p1_3b(){
+    localStorage.setItem("BBLoc","p1_3b");
+    document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">No i na tym kończy się twoja przygoda. Niestety nie udało ci się wykonać zlecenia. Zwyciężył w tobie strach albo zdrowy rozsądek.</p>";
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch1init()\">Koniec</a>";
+}
+
+function p1_3c(){
+    localStorage.setItem("BBLoc","p1_3c");
+    if (localStorage.getItem("BBGen")=="male") {
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Napisałeś idealny kod, szkoda tylko, że zajeło ci to tak długo i bestia zdążyła zjeść pakiet. No, ale twój kod jest najlepszy, a przeciż to jest najważniejsze. Odchodzisz zadowolony z siebie. Kto by się przejmował jakimś tam pakietem. </p>";
+    }else{
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Napisałaś idealny kod, szkoda tylko, że zajeło ci to tak długo i bestia zdążyła zjeść pakiet. No, ale twój kod jest najlepszy, a przeciż to jest najważniejsze. Odchodzisz zadowolona z siebie. Kto by się przejmował jakimś tam pakietem. </p>";
+    }
+        document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch1init()\">Koniec</a>";
+}
+
+function p1_3d(){
+    localStorage.setItem("BBLoc","p1_3d");
+    if (localStorage.getItem("BBGen")=="male") {
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Nikt nie spodziewał się takiego obrotu sprawy. Tak, stałeś się bestią. I co dalej?</p>";
+    }else{
+        document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Nikt nie spodziewał się takiego obrotu sprawy. Tak, stałaś się bestią. I co dalej?</p>";
+    }
+    document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"ch1init()\">Koniec</a>";
 }

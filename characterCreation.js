@@ -6,7 +6,7 @@ function createCharacter(){ //BBLoc createCharacter BBGen female/male
 }
 
 function female() {
-    document.getElementById('description').innerHTML = "Kobiety w serwerowni mogą awansować w dowolnym paradygmacie, który wybiorą – mogą być magami, złodziejami czy znawcami sztuki wojennej.";
+    document.getElementById('description').innerHTML = "Kobiety w serwerowni mogą awansować w dowolnym paradygmacie, który wybiorą – mogą być magami, złodziejami czy znawczyniami sztuki wojennej.";
 }
 
 function male() {
@@ -35,7 +35,7 @@ function warrior(){
 function thief(){
     document.getElementById('description').innerHTML = "Złodziej to zręczny hacker, który stara się osiągnąć własne cele – dobre lub złe. Potrafi stworzyć tylko najprostsze programy, lecz może <i>pożyczyć</i> kod znajdujący się w pobliżu.";
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 function createName(){
     document.getElementById('scene').innerHTML = "<h2 id=\"CCSub\">Nadaj imię</h2><input id=\"CharName\" type=\"text\" />";
     if (localStorage.getItem("BBGen")=="male"){
