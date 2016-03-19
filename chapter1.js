@@ -66,6 +66,7 @@ function p1_1b() {
 
 function p1_1c() {
     localStorage.setItem("BBLoc", "p1_1c");
+    document.getElementById('pic').innerHTML = "<img src=\"imag03.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Z prawdopodobieństwem szacowanym na 89% należy pójść za mniejszymi odciskami butów</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_1a()\">Mimo wszystko udaj się jednak za silnie typowymi śladami. 11% to zawsze jednak około (11 +/- 10)%.</a>" +
         "<a class=\"option\" onClick=\"p1_2()\">Udaj się za drobnymi śladami</a>";
@@ -73,6 +74,7 @@ function p1_1c() {
 
 function p1_1d() {
     localStorage.setItem("BBLoc", "p1_1d");
+    document.getElementById('pic').innerHTML = "<img src=\"imag03.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Wieczór przechodzi w poranek, pogoda się uspakaja, a ty masz już pewność, że należy się udać za drobnymi, prawie zasypanymi już śladami.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_2()\">Triumfalnie podążaj za drobnymi śladami, udowodniwszy wyższość metod rozumowych nad prostackimi rozwiązaniami.</a>";
 }
@@ -81,6 +83,7 @@ function p1_1d() {
 
 function p1_2() {
     localStorage.setItem("BBLoc","p1_2");
+    document.getElementById('pic').innerHTML = "<img src=\"imag03.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">Po pięciu minutach drogi, przerywanej co chwilę poszukiwaniem tropu, drobna sylwetka zaczyna majaczyć na horyzoncie. W miarę, jak się zbliżasz dostrzegasz więcej szczegółów i widzisz, że pakiet goni przerażająca bestia. Musisz szybko coś zrobić.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"p1_3()\">Zacznij krzyczeć na bestię.</a>";
 
@@ -132,6 +135,7 @@ function p1_3a(){
 
 function p1_3b(){
     localStorage.setItem("BBLoc","p1_3b");
+    document.getElementById('pic').innerHTML = "<img src=\"imag04.png\" />";
     document.getElementById('scene').innerHTML = "<p class=\"firstParagraph\">No i na tym kończy się twoja przygoda. Nie warto robić o tobie gry. Niestety, nie udało ci się wykonać zadania. Zwyciężył w tobie strach albo zdrowy rozsądek.</p>";
     document.getElementById('options').innerHTML = "<a class=\"option\" onClick=\"menu()\">Koniec</a>";
 }
@@ -282,6 +286,7 @@ function p1_6c() {
 
 function p1_6d() {
     localStorage.setItem("BBLoc", "p1_6d");
+    document.getElementById('pic').innerHTML = "<img src=\"imag04.png\" />";
     document.getElementById('scene').innerHTML = "<p>– Czy to na pewno bezpieczne...? No dobrze, raz się żyje...</p>" +
         "<p>Linkujesz kod potwora, po czym kompilujesz. Przemieniony TeCep biegnie na północ dużo szybciej, niż mógłby jako pakiet, nie obawiając się żadnych zagrożeń. To pewność siebię, czy też instynkt bestii zdominował już umysł gońca?</p><img class=\"krecha\" src=\"przerywnik.png\" />" +
         "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawionego w niej grzańca.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę. Raczej dotrze, a jeśli dotrze, to na pewno na czas.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
@@ -291,6 +296,7 @@ function p1_6d() {
 
 function p1_6e() {
     localStorage.setItem("BBLoc", "p1_6e");
+    document.getElementById('pic').innerHTML = "<img src=\"imag04.png\" />";
     document.getElementById('scene').innerHTML = "<p>– Nic cię nie obchodzi los multiwersum! Nie to nie, nie będę cię zmuszać. – TeCeP wykrzykuje z wyrzutem, wyczuwasz też w jego głosie zawód. Ale co cię to obchodzi?</p>" +
         "<p>Figurka posłańca, targana wiatrem, powoli znika na tle horyzontu. Prawdopodobnie jest to bardzo malowniczy, nastrojowy widok, ale nie masz czasu ani ochoty, by go obserwować.</p><img class=\"krecha\" src=\"przerywnik.png\" />" +
         "<p class=\"firstParagraph\">Wracasz do karczmy i dopijasz pozostawionego w niej grzańca.</p><p>– I co z tym pakietem? – pyta wędrowiec, który zdążył już poczuć się tu jak u sebie.</p><p>– Wyruszył w dalszą drogę.</p><p>Jest to ostatni moment, w którym zaprzątasz sobie nim głowę. Nigdy więcej nie otrzymał<span class=\"genDep\">e</span>ś już o nim żadnych informacji... Dotarł?... Przeżył?... Dostarczył wiadomość?...</p><p>Na te pytania nigdy już nie poznasz odpowiedzi, ale też nigdy tak na prawdę nie chciał<span class=\"genDep\">e</span>ś...</p>";
