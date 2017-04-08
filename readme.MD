@@ -11,7 +11,7 @@ Projekt stworzyłem współpracując z Agnieszką Warchoł.
 # [EN] Paragraf project: Gamebook "Bramka Baldura"
 _(the game is only available in Polish)_
 
-Web-based gamebook (or at least it's first act) created during BrainCode 2016 hackathon (organised by Allegro).
+Web-based gamebook (or at least it's first act) created during the BrainCode 2016 hackathon (organised by the Allegro).
 
 The game is a parody of classic pen-and-paper Dungeons & Dragons RPGs and their computer adaptations. It is set in a world of a computer science.
 
